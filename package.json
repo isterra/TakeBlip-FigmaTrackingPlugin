@@ -1,0 +1,27 @@
+{
+  "name": "trackingblip",
+  "version": "1.0.0",
+  "description": "Your Figma plugin",
+  "main": "code.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.28.0",
+    "@types/lodash": "^4.14.172",
+    "css-loader": "^6.2.0",
+    "html-webpack-inline-source-plugin": "^1.0.0-beta.2",
+    "html-webpack-plugin": "^5.3.2",
+    "react-dev-utils": "^11.0.4",
+    "style-loader": "^3.2.1",
+    "ts-loader": "^9.2.5",
+    "typescript": "^4.3.5",
+    "typings-for-css-modules-loader": "^1.7.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.50.0",
+    "webpack-cli": "^4.7.2"
+  }
+}

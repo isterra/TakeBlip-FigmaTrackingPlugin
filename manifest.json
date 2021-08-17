@@ -1,0 +1,7 @@
+{
+  "name": "TrackingBlip",
+  "id": "1008761230706438067",
+  "api": "1.0.0",
+  "main": "dist/code.js",
+  "ui": "dist/ui.html"
+}

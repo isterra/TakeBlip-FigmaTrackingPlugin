@@ -1,0 +1,49 @@
+body{
+  font-family: 'Roboto', sans-serif;
+  font-size: small;
+}
+
+
+.position,
+.type,
+.attendant{
+  display: flex;
+}
+.styled {
+  border: 0;
+  line-height: 1.5;
+  padding: 0 10px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: rgba(24, 180, 251, 255);;
+  border-radius: 10px;
+
+}
+
+.styled:hover {
+  background-color: rgba(41, 144, 212, 255);
+}
+.styled:active{
+  -ms-transform: translateY(2px);
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+}
+.actionButtons{
+  display: grid;
+grid-auto-flow: column;
+grid-column-gap: 10px;
+}
+
+
+input {
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid #49494925;
+  font-size: 1.4rem;
+  color: #ccc;
+        
+}
+.trackingsSucesso {
+  display: none;
+}
