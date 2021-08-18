@@ -20,93 +20,94 @@
         <label for="rigth">Direita</label><br>
     </div>
     <hr class="solid">
-    <div class="type">
-        <input type="radio" id="new" name="typeTrack" value="new">
-        <label for="new">Tracking novo</label><br>
-        <input type="radio" id="error" name="typeTrack" value="error">
-        <label for="error">Tracking com erro</label><br>
-        <input type="radio" id="validaded" name="typeTrack" value="validaded">
-        <label for="validaded">Tracking validado</label><br>
-        <input type="radio" id="sucess" name="typeTrack" value="sucess">
-        <label for="sucess">Tracking sucesso</label><br>
-    </div>
-    <br>
-    <div>
-        <input type="checkbox" id="auto" name="auto" checked>
-        <label for="auto">Auto</label>
-    </div>
-    <div class="categoryInput">
-        <p>Category: </p>
-        <input type="text" />
-    </div>
-    <br>
-    <p>Ações:</p>
-    <div>
-        <input type="checkbox" id="origin" name="origin" checked>
-        <label for="origin">Origem</label>
-    </div>
-    <br>
-    <p>Tipos de tracking:</p>
-    <div class="type">
-        <input type="radio" id="origin" name="trackPosition" value="origin">
-        <label for="origin">Origem</label><br>
-        <input type="radio" id="exception" name="trackPosition" value="exception">
-        <label for="exception">Exeção</label><br>
-    </div>
-    <div>
-        <input type="checkbox" id="check" name="exibicao" checked>
-        <label for="exibicao">Exibicao</label>
-    </div>
-
-    <div>
-        <input type="checkbox" id="check" name="selecao" checked>
-        <label for="selecao">Selecao</label>
-    </div>
-
-    <div>
-        <input type="checkbox" id="check" name="inesperado" checked>
-        <label for="inesperado">Input Inesperado</label>
-    </div>
-
-    <div>
-        <input type="checkbox" id="check" name="input">
-        <label for="input">Input</label>
-    </div>
-    <div>
-        <input type="checkbox" id="check" name="validacao">
-        <label for="validacao">Validacao</label>
-    </div>
-    <div>
-        <input class="TkSucesso" type="checkbox" id="check" name="sucesso" onclick="changeVisibilityTKSucesso(this)">
-        <label for="sucesso">Trackings de Sucesso</label>
-    </div>
-    <span class="trackingsSucesso">
-        <p>Tipo de fluxo:</p>
-        <div class="attendant">
-            <input type="radio" id="BOT" name="attendant" value="BOT" checked>
-            <label for="BOT">Bot</label><br>
-            <input type="radio" id="HUMAN" name="attendant" value="HUMAN">
-            <label for="HUMAN">Human</label><br>
+    <div class="margin">
+        <div class="type">
+            <input type="radio" id="new" name="typeTrack" value="new">
+            <label for="new">Tracking novo</label><br>
+            <input type="radio" id="error" name="typeTrack" value="error">
+            <label for="error">Tracking com erro</label><br>
+            <input type="radio" id="validaded" name="typeTrack" value="validaded">
+            <label for="validaded">Tracking validado</label><br>
+            <input type="radio" id="sucess" name="typeTrack" value="sucess">
+            <label for="sucess">Tracking sucesso</label><br>
         </div>
-        <p>Tipo de Pesquisa:</p>
-        <div>
-            <input type="radio" id="CSAT" name="tkop" value="CSAT">
-            <label for="CSAT">CSAT</label>
+        <div class="auto">
+            <input type="checkbox" id="auto" name="auto" checked>
+            <label for="auto">Auto</label>
         </div>
-        <div>
-            <input type="radio" id="CES" name="tkop" value="CES">
-            <label for="CES">CES</label>
-        </div>
-        <div>
-            <input type="radio" id="NPS" name="tkop" value="NPS">
-            <label for="NPS">NPS</label>
+        <div class="categoryInput">
+            <div class="ctText">Category: </div>
+            <input type="text" class="ctInput" />
         </div>
         <br>
-    </span>
-    <br>
-    <div class="actionButtons">
-        <input class="styled" type="button" value="Mapear">
-        <input class="styled" type="button" value="Limpar">
+        <div class="acoes">Ações:</div>
+        <div class="acoesCheck">
+            <input type="checkbox" id="origin" name="origin" checked>
+            <label for="origin">Origem</label>
+        </div>
+        <div class="trackTypes">Tipos de tracking:</div>
+        <div class="type">
+            <input type="radio" id="origin" name="trackType" value="origin">
+            <label for="origin">Origem</label><br>
+            <input type="radio" id="exception" name="trackType" value="exception">
+            <label for="exception">Exeção</label><br>
+        </div>
+        <div>
+            <input type="checkbox" id="check" name="exibicao" checked>
+            <label for="exibicao">Exibicao</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="check" name="selecao" checked>
+            <label for="selecao">Selecao</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="check" name="inesperado" checked>
+            <label for="inesperado">Input Inesperado</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="check" name="input">
+            <label for="input">Input</label>
+        </div>
+        <div>
+            <input type="checkbox" id="check" name="validacao">
+            <label for="validacao">Validacao</label>
+        </div>
+        <div class="marg10">
+            <input class="TkSucesso" type="checkbox" id="check" name="sucesso"
+                onclick="changeVisibilityTKSucesso(this)">
+            <label for="sucesso">Trackings de Sucesso</label>
+        </div>
+        <span class="trackingsSucesso">
+            <div class="marg5">Tipo de fluxo:</div>
+            <div class="attendant">
+                <input type="radio" id="BOT" name="attendant" value="BOT" checked>
+                <label for="BOT">Bot</label><br>
+                <input type="radio" id="HUMAN" name="attendant" value="HUMAN">
+                <label for="HUMAN">Human</label><br>
+            </div>
+            <div class="marg5">Tipo de Pesquisa:</div>
+            <div>
+                <input type="radio" id="CSAT" name="tkop" value="CSAT">
+                <label for="CSAT">CSAT</label>
+            </div>
+            <div>
+                <input type="radio" id="CES" name="tkop" value="CES">
+                <label for="CES">CES</label>
+            </div>
+            <div>
+                <input type="radio" id="NPS" name="tkop" value="NPS">
+                <label for="NPS">NPS</label>
+            </div>
+            <br>
+        </span>
+        <br>
+        <div class="actionButtons">
+            <input class="styled" type="button" value="Mapear">
+            <input class="styled" type="button" value="Limpar">
+        </div>
     </div>
 </body>
 

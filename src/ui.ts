@@ -13,17 +13,16 @@ document.getElementById('cancel').onclick = () => {
 */
 
 
-    window['changeVisibilityTKSucesso'] = function (rdButton) {
-var trackingsSucesso = document.querySelectorAll<HTMLElement>('.trackingsSucesso')[0]  ;
-console.log("To aqui ")
+window['changeVisibilityTKSucesso'] = function (rdButton) {
+  var trackingsSucesso = document.querySelectorAll<HTMLElement>('.trackingsSucesso')[0];
+  console.log("To aqui ")
   console.log("ssdsad")
   console.log("dsfaadfghui")
   var value = rdButton.checked
- // parent.postMessage({ pluginMessage: { type: 'changeWindowSize', value } }, '*')
   if (value) {
-   trackingsSucesso.style.display = 'inline-block'
+    trackingsSucesso.style.display = 'inline-block'
   } else {
     trackingsSucesso.style.display = 'none'
-
   }
+  parent.postMessage({ pluginMessage: { type: 'changeWindowSize', value } }, '*')
 }

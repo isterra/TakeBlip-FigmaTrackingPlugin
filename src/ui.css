@@ -1,27 +1,49 @@
 body{
   font-family: 'Roboto', sans-serif;
   font-size: small;
+  position: relative;
+  margin: 0;
 }
-
-
+.position{
+  margin: 10px;
+}
 .position,
 .type,
 .attendant{
+  margin-bottom: 5px;
   display: flex;
 }
-.styled {
-  border: 0;
-  line-height: 1.5;
-  padding: 0 10px;
-  font-size: 1rem;
-  color: #fff;
-  background-color: rgba(24, 180, 251, 255);;
-  border-radius: 10px;
+.margin{
+  margin: 10px;
+}
+.type,.auto,.acoesCheck,.marg10{
+  margin-bottom: 10px;
+}
+.acoes,.trackTypes,.marg5{
+  margin-bottom: 5px;
+}
+.solid{
+  border-top: 1px solid rgb(197, 197, 197);
+}
 
+input[type="radio"]:checked+label { font-weight: bold; }
+input[type="radio"]:not(:checked)+label {
+  color: rgb(175, 175, 175);  
+}
+
+.styled {
+  border: 1px solid grey;
+  line-height: 2;
+  padding: 0 12px;  
+  font-size: 12px;
+  color: grey;
+  background-color: white;
+  border-radius: 10px;
 }
 
 .styled:hover {
-  background-color: rgba(41, 144, 212, 255);
+  background-color: grey;
+  color:white;
 }
 .styled:active{
   -ms-transform: translateY(2px);
@@ -31,8 +53,10 @@ body{
 }
 .actionButtons{
   display: grid;
-grid-auto-flow: column;
-grid-column-gap: 10px;
+  grid-auto-flow: column;
+  grid-column-gap: 10px;
+  position: absolute;
+  right: 20px;
 }
 
 
