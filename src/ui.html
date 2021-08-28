@@ -14,7 +14,7 @@
 
 <body>
     <div class="position">
-        <input type="radio" id="left" name="trackPosition" value="left">
+        <input class="left" type="radio" id="left" name="trackPosition" value="left">
         <label for="left">Esquerda</label><br>
         <input type="radio" id="rigth" name="trackPosition" value="rigth">
         <label for="rigth">Direita</label><br>
@@ -40,39 +40,44 @@
             <input type="text" class="ctInput" />
         </div>
         <br>
-        <div class="acoes">Ações:</div>
-        <div class="acoesCheck">
-            <input type="checkbox" id="origin" name="origin" checked>
-            <label for="origin">Origem</label>
+        <div>
+            <div class="action">Ações:</div>
+            <div class="acoesCheck">
+                <input class="origeCategory" type="checkbox" id="origin" name="origin"
+                    onclick="changeVisibilityTKSucesso(this)">
+                <label for="origin">Origem</label>
+            </div>
         </div>
-        <div class="trackTypes">Tipos de tracking:</div>
-        <div class="type">
-            <input type="radio" id="origin" name="trackType" value="origin">
-            <label for="origin">Origem</label><br>
-            <input type="radio" id="exception" name="trackType" value="exception">
-            <label for="exception">Exeção</label><br>
+        <div class="actionsTrackings">
+            <div class="trackTypes">Tipos de tracking:</div>
+            <div class="orige">
+                <input class="origeOption" type="radio" id="origin" name="trackType" value="origin">
+                <label for="origin">Origem</label><br>
+                <input type="radio" id="exception" name="trackType" value="exception">
+                <label for="exception">Exceção</label><br>
+            </div>
         </div>
         <div>
-            <input type="checkbox" id="check" name="exibicao" checked>
+            <input class="exibition" type="checkbox" id="check" name="exibicao" checked>
             <label for="exibicao">Exibicao</label>
         </div>
 
         <div>
-            <input type="checkbox" id="check" name="selecao" checked>
+            <input class="selection" type="checkbox" id="check" name="selecao" checked>
             <label for="selecao">Selecao</label>
         </div>
 
         <div>
-            <input type="checkbox" id="check" name="inesperado" checked>
+            <input class="unexpected" type="checkbox" id="check" name="inesperado" checked>
             <label for="inesperado">Input Inesperado</label>
         </div>
 
         <div>
-            <input type="checkbox" id="check" name="input">
+            <input class="inputC" type="checkbox" id="check" name="input">
             <label for="input">Input</label>
         </div>
         <div>
-            <input type="checkbox" id="check" name="validacao">
+            <input class="validation" type="checkbox" id="check" name="validacao">
             <label for="validacao">Validacao</label>
         </div>
         <div class="marg10">
@@ -83,23 +88,21 @@
         <span class="trackingsSucesso">
             <div class="marg5">Tipo de fluxo:</div>
             <div class="attendant">
-                <input type="radio" id="BOT" name="attendant" value="BOT" checked>
+                <input class="sucessBot" type="radio" id="BOT" name="attendant" value="BOT" checked>
                 <label for="BOT">Bot</label><br>
                 <input type="radio" id="HUMAN" name="attendant" value="HUMAN">
                 <label for="HUMAN">Human</label><br>
             </div>
             <div class="marg5">Tipo de Pesquisa:</div>
-            <div>
+            <div class="sS">
+
                 <input type="radio" id="CSAT" name="tkop" value="CSAT">
                 <label for="CSAT">CSAT</label>
-            </div>
-            <div>
                 <input type="radio" id="CES" name="tkop" value="CES">
                 <label for="CES">CES</label>
-            </div>
-            <div>
                 <input type="radio" id="NPS" name="tkop" value="NPS">
                 <label for="NPS">NPS</label>
+
             </div>
             <br>
         </span>

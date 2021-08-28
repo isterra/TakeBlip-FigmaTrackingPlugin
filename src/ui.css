@@ -16,10 +16,10 @@ body{
 .margin{
   margin: 10px;
 }
-.type,.auto,.acoesCheck,.marg10{
+.type,.auto,.marg10{
   margin-bottom: 10px;
 }
-.acoes,.trackTypes,.marg5{
+.trackTypes,.marg5,.action{
   margin-bottom: 5px;
 }
 .solid{
@@ -69,5 +69,8 @@ input {
         
 }
 .trackingsSucesso {
+  display: none;
+}
+.actionsTrackings{
   display: none;
 }

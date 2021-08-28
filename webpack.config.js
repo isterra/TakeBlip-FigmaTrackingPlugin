@@ -1,3 +1,4 @@
+'use strict';
 const InlineChunkHtmlPlugin = require("react-dev-utils/InlineChunkHtmlPlugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
