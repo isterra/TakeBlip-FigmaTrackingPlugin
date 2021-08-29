@@ -5,7 +5,7 @@ async function createText(name, tipo, positionX, positionY, color?) {
     var text = figma.createText();
     text.name = "message";
     text.fontName = { family: "Roboto", style: "Bold" }
-    text.fills = [{ type: 'SOLID', color: color ? color : { r: 0.91, g: 0.67, b: 0 } }]
+    text.fills = [{ type: 'SOLID', color: color ? color : constants.DEFAULT_COLOR }]
     text.fontSize = 14
     text.textAutoResize = "WIDTH_AND_HEIGHT"
     text.x = (positionX);
@@ -18,7 +18,7 @@ async function createSucessText(tipo, positionX, positionY, color?) {
     var text = figma.createText();
     text.name = "message";
     text.fontName = { family: "Roboto", style: "Bold" }
-    text.fills = [{ type: 'SOLID', color: color ? color : { r: 0.91, g: 0.67, b: 0 } }]
+    text.fills = [{ type: 'SOLID', color: color ? color : constants.DEFAULT_COLOR }]
     text.fontSize = 14
     text.textAutoResize = "WIDTH_AND_HEIGHT"
     text.x = (positionX);

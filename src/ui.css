@@ -25,7 +25,8 @@ body{
 .solid{
   border-top: 1px solid rgb(197, 197, 197);
 }
-
+input[type="text"]{ color: black !important; }
+input[type="text"]:invalid{ box-shadow: none !important; }
 input[type="radio"]:checked+label { font-weight: bold; }
 input[type="radio"]:not(:checked)+label {
   color: rgb(175, 175, 175);  

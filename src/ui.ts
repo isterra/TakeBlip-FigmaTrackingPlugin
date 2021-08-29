@@ -1,6 +1,6 @@
 import './ui.css'
 var changeSelectionColors=false
-var lastTypeSelected
+var lastTypeSelected="new"
 
 //Create track on enter press
 document.addEventListener('keypress', function (e) {
@@ -65,7 +65,7 @@ window['changeVisibilityTKSucesso'] = function (rdButton) {
 //Create trackings
 window["createTracking"]=function() {
   var trackData={
-    category:document.querySelector<HTMLInputElement>('.CtInput').value,
+    category:document.querySelector<HTMLInputElement>('.CtInput').value.trim(),
     isRigth:getHtmlElement("left"),
     trackColor:getRadioSelection("type"),
     origin:getHtmlElement("origeCategory"),
@@ -94,7 +94,7 @@ onmessage = (event) => {
     changeSelectionColors=true
     document.querySelectorAll<HTMLInputElement>('.type>input').forEach(rb=>rb.checked=false)
   }
-  if(msg.type=="change type"){
+  if(msg.type=="change type"){    
     setLastSelected()
     changeSelectionColors=true
     document.querySelector<HTMLInputElement>(`#${msg.value}`).checked=true

@@ -57,7 +57,7 @@ const createTrackings = async function (trackData) {
     //Validation Track
     if (trackData.validation) {
         positionYCategory += 35
-        var category: TextNode = await supp.createText(trackCategory, constants.VALIDACAO_CATEGORIA, positionX, positionYCategory)
+        var category: TextNode = await supp.createText(trackCategory, constants.VALIDACAO_CATEGORIA, positionX, positionYCategory,color)
         var action: TextNode = await supp.createSubText(constants.VALIDACAO_ACAO, positionX, positionYCategory + 15)
         action.x = (category.x + category.width / 2) - (action.width / 2)
         components.push(supp.createComponent([category, action], positionX, positionYCategory, "Tracking"))
