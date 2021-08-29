@@ -2,6 +2,7 @@ import * as supp from './supportFunctions';
 
 import constants from "../constants";
 var lastFrame
+
 const createTrackings = async function (trackData) {
     var positionX = figma.viewport.center.x
     var positionYCategory = figma.viewport.center.y

@@ -1,9 +1,9 @@
 const constants={
 
-    DEFAULT_COLOR:{ r: 0.93, g: 0.65, b: 0 },
-    ERROS_COLOR:{ r: 0.83, g: 0, b: 0 },
-    VALIDADED_COLOR:{ r: 0.12, g: 0.58, b: 0.32 },
-    SUCESS_COLOR:{ r: 0.20, g: 0.71, b: 0.94 },
+    DEFAULT_COLOR:{ r: 0.9344978332519531, g: 0.6596454977989197, b: 0 },
+    ERROS_COLOR:{ r: 0.8313725590705872, g: 0, b: 0 },
+    VALIDADED_COLOR:{ r: 0.12941177189350128, g: 0.5882353186607361, b: 0.32549020648002625 },
+    SUCESS_COLOR:{ r: 0.2078431397676468, g: 0.7176470756530762, b: 0.9450980424880981 },
     
     ORIGEM_ORIGEM_CATEGORIA:"origem",
     ORIGEM_ORIGEM_ACAO:"[[Bot de origem]] | [[bloco de origem]]",

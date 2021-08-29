@@ -1,16 +1,6 @@
 import './ui.css'
-/*
-document.getElementById('create').onclick = () => {
-  console.log("sarsarrs")
-  const textbox = document.getElementById('count') as HTMLInputElement
-  const count = parseInt(textbox.value, 10)
-  parent.postMessage({ pluginMessage: { type: 'create-rectangles', count } }, '*')
-}
+var changeSelectionColors=false
 
-document.getElementById('cancel').onclick = () => {
-  parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*')
-}
-*/
 document.addEventListener('keypress', function (e) {
   if (e.key == "Enter") {
     window["createTracking"]()
@@ -27,7 +17,18 @@ document.querySelector<HTMLButtonElement>('#limpar').onclick=()=>{
   })
   document.querySelector<HTMLInputElement>('.CtInput').value=''
 }
-
+document.querySelectorAll<HTMLInputElement>('.type>input').forEach(
+  radio=>{
+    radio.onchange=()=>{
+        if(changeSelectionColors){
+          if(radio.checked){
+            var id= radio.id
+            parent.postMessage({ pluginMessage: { type: 'changeSelectionColors', id } }, '*')
+          }
+        }
+    }
+  }
+)
 window['changeVisibilityTKSucesso'] = function (rdButton) {
   var trackingsSucesso = document.querySelectorAll<HTMLElement>('.trackingsSucesso')[0];
   var actionsTrackings = document.querySelectorAll<HTMLElement>('.actionsTrackings')[0];
@@ -92,5 +93,16 @@ window["createTracking"]=function() {
       if(trackData.sucess&&sucessFlowValidadte()&&trackData.sucessSearch||!trackData.sucess)
         parent.postMessage({ pluginMessage: { type: 'createTracking', trackData } }, '*')
   }   
+}
+
+onmessage = (event) => {
+  var msg= event.data.pluginMessage
+  console.log(msg);
+  if(msg.type=="change type"){
+    document.querySelector<HTMLInputElement>(`#${msg.value}`).checked=true
+  }
+  if(msg.type=="changeSelection"){
+    changeSelectionColors=false
+  }
 }
   
