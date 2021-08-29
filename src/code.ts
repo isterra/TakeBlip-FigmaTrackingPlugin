@@ -1,12 +1,14 @@
 var uiWidth = 400
 var uiHeigth = 390
 var auto = true;
-var selecting = false
 var nodesSelecteds = []
+
 import createTrackings from './functions/createTracking'
 import { trackingColor, valueBasedOnRcolor } from './functions/supportFunctions'
+
 figma.showUI(__html__);
 figma.ui.resize(uiWidth, uiHeigth)
+
 figma.ui.onmessage = msg => {
   if (msg.type === 'createTracking') {
     createTrackings(msg.trackData)
@@ -54,7 +56,6 @@ figma.on("selectionchange", () => {
           figma.ui.postMessage(changeCategory)
         }
       }
-      selecting = true
       var available = true
       var sameColor = true
       var color
@@ -92,7 +93,6 @@ figma.on("selectionchange", () => {
         nodesSelecteds = []
       }
     } else {
-      selecting = false
       var change = {
         type: "changeSelection",
         value: false
@@ -101,4 +101,3 @@ figma.on("selectionchange", () => {
     }
   }
 })
-
