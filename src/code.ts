@@ -2,10 +2,9 @@ var uiWidth = 400
 var uiHeigth = 390
 var auto = true;
 var selecting = false
-var nodesSelecteds=[]
+var nodesSelecteds = []
 import createTrackings from './functions/createTracking'
-import * as edit from './functions/editTracking'
-import {trackingColor} from './functions/supportFunctions'
+import { trackingColor, valueBasedOnRcolor } from './functions/supportFunctions'
 figma.showUI(__html__);
 figma.ui.resize(uiWidth, uiHeigth)
 figma.ui.onmessage = msg => {
@@ -23,21 +22,39 @@ figma.ui.onmessage = msg => {
       figma.ui.resize(uiWidth, uiHeigth)
     }
   }
-  if(msg.type==="changeSelectionColors"){
-    nodesSelecteds.forEach(node=>{
-      node.children[0].fills[0].color=trackingColor(msg.id)
+  if (msg.type === "changeSelectionColors") {
+    nodesSelecteds.forEach(node => {
+      var textNode = node.children[0] as TextNode
+      var textNodeCloned = textNode.clone()
+      textNodeCloned.fills = [{ type: 'SOLID', color: trackingColor(msg.id) }]
+      node.children[0].fills = textNodeCloned.fills
     })
+  }
+  if (msg.type === "changeAuto") {
+    auto = msg.auto
+    if(!auto){
+      nodesSelecteds=[]
+    }
   }
 };
 
 figma.on("selectionchange", () => {
-  console.log("sadas");
-  
   if (auto) {
-    var textValue = ""
-    var nodes = figma.currentPage.selection
+    nodesSelecteds = []
+    var nodes = figma.currentPage.selection.slice()
     if (nodes.length > 0) {
-      selecting=true
+      if (nodes.length == 1) {
+        if ((nodes[0].type == "COMPONENT" || nodes[0].type == "INSTANCE") && nodes[0].name.match(/track/ig)) {
+          node = nodes[0] as ComponentNode
+          var textNode = node.children[0] as TextNode
+          var changeCategory = {
+            type: "change Category",
+            value: textNode.characters.split(/exibicao|selecao|inesperado|input inesperado|question|answer|reason|origem|input|validacao/ig)[0]
+          }
+          figma.ui.postMessage(changeCategory)
+        }
+      }
+      selecting = true
       var available = true
       var sameColor = true
       var color
@@ -47,58 +64,41 @@ figma.on("selectionchange", () => {
         if (!((node.type == "COMPONENT" || node.type == "INSTANCE") && node.name.match(/track/ig))) {
           available = false;
           break;
-        } else if(sameColor){
+        } else if (sameColor) {
           if (i != 0) {
-            node = node as ComponentNode
-            var text = node.children[0] as TextNode
-            var textColor = text.fills[0].color
-            console.log(textColor);
-            
-            if(textColor.r!=color.r)
-              sameColor=false;
+            var textNode = node.children[0] as TextNode
+            if (textNode.fills[0].color.r != color.r)
+              sameColor = false;
           } else {
-            node = node as ComponentNode
-            var text = node.children[0] as TextNode
-            color = text.fills[0].color
-            console.log(color);
+            var textNode = node.children[0] as TextNode
+            color = textNode.fills[0].color
           }
-        }
-      }   
-      console.log(sameColor);
-      console.log(available);
-      if (available) {
-        if(sameColor){
-          var msg={
-            type:"change type",
-            value:edit.valueBasedOnRcolor(color.r)
-          }
-          figma.ui.postMessage(msg)
         }
       }
-    }else{
-      selecting=false
-      var change={
-        type:"changeSelection",
-        value:false
+      if (available) {
+        if (sameColor) {
+          var msg = {
+            type: "change type",
+            value: valueBasedOnRcolor(color.r)
+          }
+          figma.ui.postMessage(msg)
+        } else {
+          var diffMessage = {
+            type: "change diff colors",
+          }
+          figma.ui.postMessage(diffMessage)
+        }
+      } else {
+        nodesSelecteds = []
+      }
+    } else {
+      selecting = false
+      var change = {
+        type: "changeSelection",
+        value: false
       }
       figma.ui.postMessage(change)
     }
-    /* if (node.length > 0){
-       if (node[0].type == "TEXT") {
-         var textValue = node[0].characters.split(/exibicao|selecao|inesperado|input inesperado|question|answer|reason|origem|input|validacao/ig)[0]
-       }
-       if((node[0].type=="COMPONENT"||node[0].type == "INSTANCE")&&node[0].name.match(/track/ig)){
-         var component=node[0]
-         console.log("É component")
-         console.log(component)
-         var textComponent=component.children[0] as TextNode
-         textValue= textComponent.characters.split(/exibicao|selecao|inesperado|input inesperado|question|answer|reason|origem|input|validacao/ig)[0]
-       }
-       node = null
-       figma.ui.postMessage(textValue)
-     }
-     */
   }
-  console.log(selecting);
 })
 
