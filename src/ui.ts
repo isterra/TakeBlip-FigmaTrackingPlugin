@@ -17,6 +17,17 @@ document.addEventListener('keypress', function (e) {
   }
 }, false)
 
+document.querySelector<HTMLButtonElement>('#mapear').onclick=()=>{
+  window["createTracking"]()
+}
+document.querySelector<HTMLButtonElement>('#limpar').onclick=()=>{
+  var inputs = document.querySelectorAll<HTMLInputElement>('input')
+  inputs.forEach(input=>{
+    input.checked=false
+  })
+  document.querySelector<HTMLInputElement>('.CtInput').value=''
+}
+
 window['changeVisibilityTKSucesso'] = function (rdButton) {
   var trackingsSucesso = document.querySelectorAll<HTMLElement>('.trackingsSucesso')[0];
   var actionsTrackings = document.querySelectorAll<HTMLElement>('.actionsTrackings')[0];
@@ -52,23 +63,34 @@ function getPrincipal(){
     getHtmlElement("exibition"),
     getHtmlElement("selection"),
     getHtmlElement("unexpected"),
+    getHtmlElement("inputC")
   ]
+}
+function originValidate(){
+  console.log(getHtmlElement("origeOption")||getHtmlElement("exceptionOption"));
+  return getHtmlElement("origeOption")||getHtmlElement("exceptionOption");
+}
+function sucessFlowValidadte(){
+  return getHtmlElement("sucessBot")||getHtmlElement("sucessHuman")
 }
 
 window["createTracking"]=function() {
   var trackData={
-    direction:getHtmlElement("left"),
+    category:document.querySelector<HTMLInputElement>('.CtInput').value,
+    isRigth:getHtmlElement("left"),
     trackColor:getRadioSelection("type"),
     origin:getHtmlElement("origeCategory"),
     originCategory:getHtmlElement("origeOption"),
     principal:getPrincipal(),
-    input:getHtmlElement("inputC"),
     validation:getHtmlElement("validation"),
     sucess:getHtmlElement("TkSucesso"),
     sucessFlow:getHtmlElement("sucessBot"),
     sucessSearch:getRadioSelection("sS")
   }
-  console.log(trackData);
-  parent.postMessage({ pluginMessage: { type: 'createTracking', trackData } }, '*')
-  
+  if(trackData.category||trackData.sucess){
+    if(trackData.origin&&originValidate()||!trackData.origin)
+      if(trackData.sucess&&sucessFlowValidadte()&&trackData.sucessSearch||!trackData.sucess)
+        parent.postMessage({ pluginMessage: { type: 'createTracking', trackData } }, '*')
+  }   
 }
+  

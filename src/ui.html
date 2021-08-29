@@ -14,7 +14,7 @@
 
 <body>
     <div class="position">
-        <input class="left" type="radio" id="left" name="trackPosition" value="left">
+        <input class="left" type="radio" id="left" name="trackPosition" value="left" checked>
         <label for="left">Esquerda</label><br>
         <input type="radio" id="rigth" name="trackPosition" value="rigth">
         <label for="rigth">Direita</label><br>
@@ -22,7 +22,7 @@
     <hr class="solid">
     <div class="margin">
         <div class="type">
-            <input type="radio" id="new" name="typeTrack" value="new">
+            <input type="radio" id="new" name="typeTrack" value="new" checked>
             <label for="new">Tracking novo</label><br>
             <input type="radio" id="error" name="typeTrack" value="error">
             <label for="error">Tracking com erro</label><br>
@@ -37,7 +37,7 @@
         </div>
         <div class="categoryInput">
             <div class="ctText">Category: </div>
-            <input type="text" class="ctInput" />
+            <input type="text" class="CtInput"/>
         </div>
         <br>
         <div>
@@ -53,7 +53,7 @@
             <div class="orige">
                 <input class="origeOption" type="radio" id="origin" name="trackType" value="origin">
                 <label for="origin">Origem</label><br>
-                <input type="radio" id="exception" name="trackType" value="exception">
+                <input class="exceptionOption" type="radio" id="exception" name="trackType" value="exception">
                 <label for="exception">Exceção</label><br>
             </div>
         </div>
@@ -90,7 +90,7 @@
             <div class="attendant">
                 <input class="sucessBot" type="radio" id="BOT" name="attendant" value="BOT" checked>
                 <label for="BOT">Bot</label><br>
-                <input type="radio" id="HUMAN" name="attendant" value="HUMAN">
+                <input class="sucessHuman" type="radio" id="HUMAN" name="attendant" value="HUMAN">
                 <label for="HUMAN">Human</label><br>
             </div>
             <div class="marg5">Tipo de Pesquisa:</div>
@@ -108,8 +108,8 @@
         </span>
         <br>
         <div class="actionButtons">
-            <input class="styled" type="button" value="Mapear">
-            <input class="styled" type="button" value="Limpar">
+            <input id="mapear" class="styled" type="button" value="Mapear">
+            <input id="limpar" class="styled" type="button" value="Limpar">
         </div>
     </div>
 </body>
