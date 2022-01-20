@@ -18,6 +18,12 @@
         <label for="left">Esquerda</label><br>
         <input type="radio" id="rigth" name="trackPosition" value="rigth">
         <label for="rigth">Direita</label><br>
+        <input class="BR" type="radio" id="BR" name="lenguage" value="BR" checked>
+        <label for="BR">Português</label><br>
+        <input type="radio" id="EN" name="lenguage" value="EN">
+        <label for="EN">Inglês</label><br>
+        <input class="ES" type="radio" id="ES" name="lenguage" value="ES">
+        <label for="ES">Espanhol</label><br>
     </div>
     <hr class="solid">
     <div class="margin">
@@ -80,7 +86,7 @@
             <input class="validation" type="checkbox" id="check" name="validacao">
             <label for="validacao">Validacao</label>
         </div>
-        <div class="marg10">
+        <div class="margTkSucesso">
             <input class="TkSucesso" type="checkbox" id="check" name="sucesso"
                 onclick="changeVisibilityTKSucesso(this)">
             <label for="sucesso">Trackings de Sucesso</label>
@@ -104,8 +110,11 @@
                 <label for="NPS">NPS</label>
 
             </div>
-            <br>
         </span>
+        <div>
+            <input class="link" type="checkbox" id="link" name="link">
+            <label for="link">Link</label>
+        </div>
         <br>
         <div class="actionButtons">
             <input id="mapear" class="styled" type="button" value="Mapear">

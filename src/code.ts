@@ -11,6 +11,8 @@ figma.ui.resize(uiWidth, uiHeigth)
 
 figma.ui.onmessage = msg => {
   if (msg.type === 'createTracking') {
+    console.log(msg.trackData);
+    
     createTrackings(msg.trackData)
   }
   if (msg.type === 'changeWindowSize') {
@@ -30,6 +32,7 @@ figma.ui.onmessage = msg => {
       var textNodeCloned = textNode.clone()
       textNodeCloned.fills = [{ type: 'SOLID', color: trackingColor(msg.id) }]
       node.children[0].fills = textNodeCloned.fills
+      textNodeCloned.remove()
     })
   }
   if (msg.type === "changeAuto") {

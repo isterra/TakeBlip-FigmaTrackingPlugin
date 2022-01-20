@@ -65,6 +65,7 @@ window['changeVisibilityTKSucesso'] = function (rdButton) {
 //Create trackings
 window["createTracking"]=function() {
   var trackData={
+    lenguage:document.querySelector<HTMLInputElement>('input[name="lenguage"]:checked').value,
     category:document.querySelector<HTMLInputElement>('.CtInput').value.trim(),
     isRigth:getHtmlElement("left"),
     trackColor:getRadioSelection("type"),
@@ -74,7 +75,8 @@ window["createTracking"]=function() {
     validation:getHtmlElement("validation"),
     sucess:getHtmlElement("TkSucesso"),
     sucessFlow:getHtmlElement("sucessBot"),
-    sucessSearch:getRadioSelection("sS")
+    sucessSearch:getRadioSelection("sS"),
+    link:getHtmlElement("link")
   }
   if(trackData.category||trackData.sucess){
     if(trackData.origin&&originValidate()||!trackData.origin)

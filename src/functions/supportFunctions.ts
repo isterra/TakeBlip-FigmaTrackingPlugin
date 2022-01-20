@@ -1,4 +1,4 @@
-import constants from "../constants";
+import constants from "../constants/colors";
 
 async function createText(name, tipo, positionX, positionY, color?) {
     await figma.loadFontAsync({ family: "Roboto", style: "Bold" })

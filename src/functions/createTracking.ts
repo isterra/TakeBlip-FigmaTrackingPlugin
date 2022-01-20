@@ -1,6 +1,6 @@
 import * as supp from './supportFunctions';
 
-import constants from "../constants";
+import lenguages from "../constants/constants";
 var lastFrame
 
 const createTrackings = async function (trackData) {
@@ -9,7 +9,7 @@ const createTrackings = async function (trackData) {
     var components: Array<ComponentNode> = []
     var color = supp.trackingColor(trackData.trackColor)
     var trackCategory = trackData.category
-
+    var constants = lenguages(trackData.lenguage);
     //OrigeTrack
     if (trackData.origin) {
         var categoryName = trackData.originCategory ? constants.ORIGEM_ORIGEM_CATEGORIA : constants.ORIGEM_EXCECAO_CATEGORIA
@@ -57,7 +57,7 @@ const createTrackings = async function (trackData) {
     //Validation Track
     if (trackData.validation) {
         positionYCategory += 35
-        var category: TextNode = await supp.createText(trackCategory, constants.VALIDACAO_CATEGORIA, positionX, positionYCategory,color)
+        var category: TextNode = await supp.createText(trackCategory, constants.VALIDACAO_CATEGORIA, positionX, positionYCategory, color)
         var action: TextNode = await supp.createSubText(constants.VALIDACAO_ACAO, positionX, positionYCategory + 15)
         action.x = (category.x + category.width / 2) - (action.width / 2)
         components.push(supp.createComponent([category, action], positionX, positionYCategory, "Tracking"))
@@ -103,6 +103,22 @@ const createTrackings = async function (trackData) {
             }
         }
     }
+    if (trackData.link) {
+        positionYCategory += 35
+        var category: TextNode = await supp.createText(trackCategory, constants.LINK_CATEGORY, positionX, positionYCategory, color)
+        var action: TextNode = await supp.createSubText(constants.LINK_ACTION, positionX, positionYCategory + 15)
+        
+        if (trackData.isRigth) {
+            var baseX=components[0]?components[0].x+components[0].width:positionX
+            supp.changeDirection([category, action])
+            positionX=baseX-category.width
+            category.x=positionX
+            action.x=baseX-action.width
+        }
+        components.push(supp.createComponent([category, action], positionX, positionYCategory, "Tracking"))
+        positionYCategory += 65
+    }
+
     lastFrame = supp.addNodesToFrame(components, lastFrame)
     figma.currentPage.selection = components
 }
