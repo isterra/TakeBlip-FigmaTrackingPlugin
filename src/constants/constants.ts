@@ -2,9 +2,11 @@ const constantsBR={
 
     ORIGEM_ORIGEM_CATEGORIA:"origem",
     ORIGEM_ORIGEM_ACAO:"[[Bot de origem]] | [[bloco de origem]]",
+    ORIGEM_ORIGEM_ACAO_BUILDER:"[[Bloco de origem]]",
     
     ORIGEM_EXCECAO_CATEGORIA:"origem",
     ORIGEM_EXCECAO_ACAO:"[[Bot de origem]] | [[bloco de origem]] | [[Input do usuario na origem]]",
+    ORIGEM_EXCECAO_ACAO_BUILDER:"[[Bloco de origem]] | [[input do usuario na origem]]",
     
     EXIBICAO_CATEGORIA:"exibicao",
     EXIBICAO_ACAO:"Exibicao",
@@ -48,9 +50,11 @@ const constantsEN={
 
     ORIGEM_ORIGEM_CATEGORIA:"source",
     ORIGEM_ORIGEM_ACAO:"[[Bot source]] | [[block source]]",
+    ORIGEM_ORIGEM_ACAO_BUILDER:"[[Block source]]",
     
     ORIGEM_EXCECAO_CATEGORIA:"source",
     ORIGEM_EXCECAO_ACAO:"[[Bot source]] | [[block source]] | [[user input]]",
+    ORIGEM_EXCECAO_ACAO_BUILDER:"[[Block source]] | [[user input]]",
     
     EXIBICAO_CATEGORIA:"display",
     EXIBICAO_ACAO:"Display",
@@ -93,9 +97,11 @@ const constantsES={
     
     ORIGEM_ORIGEM_CATEGORIA:"origen",
     ORIGEM_ORIGEM_ACAO:"[[Bot de origen]] | [[bloque de origen]]",
+    ORIGEM_ORIGEM_ACAO_BUILDER:"[[Bloque de origen]]",
     
     ORIGEM_EXCECAO_CATEGORIA:"origen",
     ORIGEM_EXCECAO_ACAO:"[[Bot de origen]] | [[bloque de origen]] | [[mensaje del usuario]]",
+    ORIGEM_EXCECAO_ACAO_BUILDER:"[[Bloque de origen]] | [[mensaje del usuario]]",
     
     EXIBICAO_CATEGORIA:"exposicion",
     EXIBICAO_ACAO:"Exposicion",

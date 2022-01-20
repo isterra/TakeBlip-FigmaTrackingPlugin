@@ -12,8 +12,21 @@ const createTrackings = async function (trackData) {
     var constants = lenguages(trackData.lenguage);
     //OrigeTrack
     if (trackData.origin) {
+        var actionName
+        if(trackData.originCategory){
+            if(trackData.originBot){
+                actionName=constants.ORIGEM_ORIGEM_ACAO
+            }else{
+                actionName=constants.ORIGEM_ORIGEM_ACAO_BUILDER
+            }
+        }else{
+            if(trackData.originBot){
+                actionName=constants.ORIGEM_EXCECAO_ACAO             
+            }else{
+                actionName= constants.ORIGEM_EXCECAO_ACAO_BUILDER
+             }
+        }
         var categoryName = trackData.originCategory ? constants.ORIGEM_ORIGEM_CATEGORIA : constants.ORIGEM_EXCECAO_CATEGORIA
-        var actionName = trackData.originCategory ? constants.ORIGEM_ORIGEM_ACAO : constants.ORIGEM_EXCECAO_ACAO
         var category: TextNode = await supp.createText(trackCategory, categoryName, positionX, positionYCategory, color)
         var action: TextNode = await supp.createSubText(actionName, positionX, positionYCategory + 15)
         components.push(supp.createComponent([category, action], positionX, positionYCategory, "Tracking"))

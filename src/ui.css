@@ -13,6 +13,10 @@ body{
   margin-bottom: 5px;
   display: flex;
 }
+.orige{
+  margin-bottom: 5px;
+  display: flex;
+}
 .margin{
   margin: 10px;
 }

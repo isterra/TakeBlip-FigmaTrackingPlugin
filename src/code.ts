@@ -11,8 +11,6 @@ figma.ui.resize(uiWidth, uiHeigth)
 
 figma.ui.onmessage = msg => {
   if (msg.type === 'createTracking') {
-    console.log(msg.trackData);
-    
     createTrackings(msg.trackData)
   }
   if (msg.type === 'changeWindowSize') {

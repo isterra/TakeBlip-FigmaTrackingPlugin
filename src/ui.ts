@@ -58,7 +58,7 @@ window['changeVisibilityTKSucesso'] = function (rdButton) {
   }
   var message={
     canExpand:value,
-    size:name=="sucesso"?80:60
+    size:name=="sucesso"?80:70
   }
   parent.postMessage({ pluginMessage: { type: 'changeWindowSize', message } }, '*')
 }
@@ -70,6 +70,7 @@ window["createTracking"]=function() {
     isRigth:getHtmlElement("left"),
     trackColor:getRadioSelection("type"),
     origin:getHtmlElement("origeCategory"),
+    originBot:getHtmlElement("routerOption"),
     originCategory:getHtmlElement("origeOption"),
     principal:getPrincipal(),
     validation:getHtmlElement("validation"),
