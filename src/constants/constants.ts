@@ -115,7 +115,7 @@ const constantsES={
     INPUT_CATEGORIA:"mensaje",
     INPUT_ACAO:"[[Mensaje del usuario]] | valido;invalido",
 
-    VALIDACAO_CATEGORIA:"validación",
+    VALIDACAO_CATEGORIA:"validacion",
     VALIDACAO_ACAO:"Si;no",
     
     ST_QUESTION_CATEGORY:"ST survey question",
